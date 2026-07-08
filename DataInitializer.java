@@ -18,6 +18,13 @@ public class DataInitializer {
         show.setShowId(showId);
         show.setMovie(movie);
         show.setShowStartTime(showStartTime);
+
+        // Give every show its own screen with 100 fresh (unbooked) seats
+        Screen screen = new Screen();
+        screen.setScreenId(showId);
+        screen.setSeats(createSeats());
+        show.setScreen(screen);
+
         return show;
     }
 
